@@ -16,3 +16,12 @@ git reset --hard 1df0573(最新版本)  前往最新版本
 
 
 git clean -xf  杀伤力比较大，它删除当前目录下所有没有track过的文件，不管它是否是.gitignore文件里面指定的文件夹和文件。
+
+git push  commit后同步到Github上
+
+
+新建的repository关联到本地
+git remote add origin 你复制的地址(SSH地址)
+  (如果你在创建 repository 的时候，加入了 README.md 或者 LICENSE ，那 么 github 会拒绝你的 push 。你需要先执行 git pull origin master。)
+
+git push -u origin master 将本地仓库上传至Github的仓库并进行关联
