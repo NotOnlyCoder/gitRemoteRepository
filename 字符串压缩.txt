@@ -1,0 +1,59 @@
+题目：（leetCode）面试题 01.06. 字符串压缩
+ instance 输入："aabcccccaaa"
+          输出："a2b1c5a3
+//方法一 使用StringBuilder的append()方法连接字符串
+class Solution {
+  public String compressString(String S) {
+    int len =S.length();
+    if(S==null||len<=1) return S;
+
+    StringBuilder sb = new StringBuilder();
+    //快慢前后双指针
+    int l=0,r=1;
+    while(r<len){
+        if(S.charAt(r)!=S.charAt(l)){
+            sb.append(S.charAt(l));
+            sb.append((r-l)+"");
+            l=r;
+            r+=1;
+        }else{
+            r++;
+        }
+    }
+    //最后一个相同的字符
+    sb.append(S.charAt(l));
+    sb.append((r-l)+"");
+
+    //和原字符串比较长度
+    return sb.length()>=len?S:sb.toString();
+}
+}
+
+//方法二 不使用StringBuilder，使用String支持的"+"
+class Solution {
+   public String compressString(String S) {
+	      //字符串的拼接 支持"+"运算 
+	      //string和非string的转换 Integer.toString(int a) String.toCharArray() OtherType.toString()
+	      if(S.length() <= 2)
+	        return S;
+	      
+	      String str = "";
+	      Character c = S.charAt(0);
+	      Integer count = 0;//基础类型不能调用相应对象的方法 int count = 0; count.toString();调用失败
+	      
+	      for(int i = 0; i<S.length();i++){
+	        if(c.equals(S.charAt(i))){
+	          count++;
+	        }else{
+	            str += c + count.toString();
+	            c =S.charAt(i);
+	            count = 1;
+	        }
+	      }
+          str += c + count.toString();//
+	      if(S.length() < str.length())
+	       return S;
+	       else
+	        return str;
+	    }
+}
