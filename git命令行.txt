@@ -1,14 +1,18 @@
-+---[RSA 3072]----+
-|   ..            |
-|    .. .         |
-|     .o .        |
-|. =+oE .         |
-| B=B .  S        |
-|+*X+X  .         |
-|OOB*o*  o        |
-|*Boo. .  o       |
-|+.o.   ..        |
-+----[SHA256]-----+
+﻿git init  建立git
+git status  查看状态（建立了git的文件夹中是否有文件的改变或增删）
+git add -A  把新加和有改变的文件添加到stage
+git commit -m "提交信息"  把stage中的文件提交到local repository
+git log  看到提交的记录
 
-SHA256:Piswhp7rgYMmW42y0C2UmY5L3YD9hmhJDx6cbS0F/aE m15310489251@163.com
-修改一次
+文件改变没有add时
+git diff  改变了文件内容后未add时，可以查看改变前后文件的不同
+git checkout -- .  撤销这些更改
+
+文件改变后执行add和commit,版本回退
+git log 查看提交记录
+git reset --hard 1df0573(取版本号前7位)  前往需要使用的版本,新版本的提交记录会消失不见
+git reflog  可以看到执行git reset --hard后消失的最新版本
+git reset --hard 1df0573(最新版本)  前往最新版本
+
+
+git clean -xf  杀伤力比较大，它删除当前目录下所有没有track过的文件，不管它是否是.gitignore文件里面指定的文件夹和文件。
