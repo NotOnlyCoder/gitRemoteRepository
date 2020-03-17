@@ -1,0 +1,22 @@
+解决MYSQL:1045-Access denied for user 'root'@'localhost' 错误
+
+　   1.以管理员的身份打开cmd，关掉MySQL服务（net stop mysql）
+
+　　 2.在mysql bin目录下输入：mysqld  --skip-grant-tables
+
+ 　　3.再打开一个cmd窗口，输入mysql  -u  root  -p 
+
+　　　这时就可以免密码进入mysql。
+
+ 　　4.现在就可以进行密码更改了
+
+　　　use mysql
+
+　　　update user set password = password("新密码") where user = "root";
+
+　　 5.密码设置成功后，重启电脑，打开mysql服务（net start mysql）
+ 
+这时我们就能用改好的密码进行登录了。
+
+
+https://www.cnblogs.com/lyq159/archive/2019/12/16/12051059.html

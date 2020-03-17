@@ -1,0 +1,11 @@
+Java 引用 浅克隆 深克隆 的区别
+https://blog.csdn.net/ztchun/article/details/79110096
+
+引用：两个对象指向同一片内存地址。
+
+浅克隆：被克隆类需实现Cloneable接口，被克隆类的"基本类型"值复制到新类  但是"引用类型"同样指向同一片内存地址。
+
+深克隆：被克隆类中的"引用类型"也要实现Cloneable接口
+
+
+工具类BeanUtils和PropertyUtils可以对 对象 进行深克隆
