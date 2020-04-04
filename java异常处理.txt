@@ -1,0 +1,37 @@
+参考文档https://baijiahao.baidu.com/sid=1612080193258356687&wfr=spider&for=pc
+《Java核心技术卷I》第十一章
+
+处理异常代码格式
+（1）try{
+//可能出现异常的代码块
+} catch (Exception e) { //出现指定的异常时会进入该代码块。
+//捕获到异常后处理异常的代码块
+} finally { //可选
+//不管是否触发了异常,都将被执行
+}
+
+e.getMessage()得到异常相关信息  e.getClass().getName()得到异常对象                                实际类型
+
+异常的抛出与捕获（注意“已检查异常”与“运行时异常的”的区别）
+   ** 所有的异常类都继承自Throwable,所以可以定义自己的异常类。
+使用（1）的代码格式执行:throw new **Exception 后必须在catch()中捕获相关异常
+   ** public void read(String filename) throws IOException{
+        //code that might throw exceptions
+       }
+      throws会将异常传递给调用者，调用者必须对已检查异常进行处理或者进行传递
+    
+
+1.NullPointerException
+    当程序运行时，对象未初始化或为空时，NullPointerException就出现了，写Java程序时要特别注意这个异常，该异常不捕获，直接导致整个程序崩溃。
+在java 8 中引入了 OPtional 类，专门用来解决null的安全问题
+public static String getName(Cat s){
+Optional<Cat> cat = Optional.ofNullable(s);
+if(!cat.isPresent()){
+return "is Null";
+}
+return cat.get().name;
+}
+或者
+public static String getName(Cat s){
+return Optional.ofNullable(s).map(sl->sl.name).orElse("is Null");
+}

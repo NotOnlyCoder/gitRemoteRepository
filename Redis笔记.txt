@@ -1,0 +1,4 @@
+Redis学习笔记
+  NoSQL数据库--区别于传统关系(SQL)数据库
+  8种NoSQL数据库的比较-->https://www.cnblogs.com/woshijiuke/p/11692910.html
+  当java对象存储到NoSQL数据库中是需要序列化 有关序列化和反序列化的介绍-->https://www.jianshu.com/p/4935a87976e5

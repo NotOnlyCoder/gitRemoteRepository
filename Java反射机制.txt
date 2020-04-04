@@ -1,0 +1,9 @@
+https://blog.csdn.net/weixin_42724467/article/details/84311385
+1.获取反射入口（class对象）的三种方法
+（1）通过Class.forName("全类名")
+     Class<?> perClazz = Class.forName("reflect_fanshe.Person");
+（2）类名.class
+     Class<?> perClazz2 = Person.class;
+（3）对象.getClass() 
+     Person person = new Person();
+     Class<?> perClazz3 = person.getClass();

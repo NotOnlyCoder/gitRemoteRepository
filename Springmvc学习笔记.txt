@@ -1,0 +1,26 @@
+﻿SpringMvc学习笔记
+  1.springmvc的url映射规则  
+  https://blog.csdn.net/hemeinvyiqiluoben/article/details/81016590
+  2.ModelandView  
+  https://blog.csdn.net/qq30211478/article/details/78016155
+  https://www.cnblogs.com/zly123/p/10479172.html
+
+  在web.xml中配置contextConfigLocation的作用
+  https://blog.csdn.net/zhangliao613/article/details/6289114
+  加载所有需要的配置文件，使用这个参数后不会默认加载WEB/INF/文件下的applicationContext.xml文件
+  
+  3.前端页面中获取到ModelAndView绑定的值 
+  https://blog.csdn.net/u010565037/article/details/82754489
+  
+  4.几种拦截方式的区别.
+   拦截方式*.do，不会导致静态文件（jpg,js,css）被拦截
+   https://blog.csdn.net/qq_33314107/article/details/79120593
+
+  5.controller方法获取参数
+   https://blog.csdn.net/a909301740/article/details/80411114
+  
+  6.controller方法返回参数
+   https://www.cnblogs.com/Doaoao/p/10647971.html
+
+
+

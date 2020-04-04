@@ -1,0 +1,48 @@
+class Solution {
+      //1.插入排序：T=O(n^2),不采用
+        //2.运用分治思想的归并排序T=O(n)
+       //MERGE()合并子问题（即合并已经排好序的两个子数组）
+       public void merge(int[] A,int p,int q,int r){
+          //计算两个子数组的长度
+          int n1 = q - p + 1;
+          int n2 = r - q;
+          //初始化两个子数组，然后把A存入子数组
+          int[] L = new int[n1 + 1];
+          int[] R = new int[n2 + 1];
+          for(int i = 1;i<=n1;i++){
+             L[i] = A[p + i - 1];
+          }
+          for(int i = 1;i<=n2;i++){
+             R[i] = A[q + j];
+          }
+          //设置数组最后一个数为哨兵-无穷大
+         L[n1 + 1] = Integer.MAX_VALUE;
+         R[n2 + 1] = Integer.MAX_VALUE;
+         
+         //开始归并排序两个子数组
+         int i = 1;
+         int j = 1;
+         for(int k = p;k < r;k++){
+            if(L[i]<=R[j]){
+               A[k] = L[i];
+               i++;
+            }else{
+               A[k] = R[j];
+               j++;
+            }
+         }
+       }
+    
+    public void merge-Sort(int[] A,int p,int r){
+       if(p<r){
+         q = (p + r)/2;
+         merge-Sort(A,p,q);
+         merge-Sort(A,q+1,r);
+         merge(A,p,q,r);
+       }
+    }
+
+    public int[] sortArray(int[] nums) {
+      merge-Sort(nums,1,num.length);
+    }
+}

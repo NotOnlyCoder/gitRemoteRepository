@@ -1,0 +1,30 @@
+1.使用方法
+        https://blog.csdn.net/bicheng4769/article/details/80453522
+ （1）引用对应的jar包（*注意srping-web,spring-webmv,spring-test.jar的版本必须一致，
+ 否则报错Could not load TestContextBootstrapper [null]. Specify @BootstrapWith's 'value'）
+ 
+ （2）编写对应的测试类：
+  //注解让测试运行于Spring测试环境。
+  @RunWith(SpringJUnit4ClassRunner.class)
+  //引入Spring配置
+  @ContextConfiguration({"classpath*:/dispatcher-servlet.xml", "classpath*:/mybatis-config.xml"})
+  @WebAppConfiguration("src/main/resources")
+  
+  （3）需要测试方法加上@Test：
+
+@RunWith(SpringJUnit4ClassRunner.class)     //表示继承了SpringJUnit4ClassRunner类
+@ContextConfiguration(locations = {"classpath:config/application.xml","classpath:config/mybatisConfig.xml"})
+public class UserServiceTest {
+	 @Resource
+	  private UserService us;
+
+	@Test
+	public void testFindUserByName() {
+	
+		String username = "leo";
+		String password = "123";
+		com.demo.entity.User user = us.findUserByName(username,password);
+		System.out.print(user.toString());
+	}
+
+}

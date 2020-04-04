@@ -2,17 +2,17 @@
 
 　   1.以管理员的身份打开cmd，关掉MySQL服务（net stop mysql）
 
-　　 2.在mysql bin目录下输入：mysqld  --skip-grant-tables
+　　 2.在mysql bin目录下输入：mysqld --skip-grant-tables
 
- 　　3.再打开一个cmd窗口，输入mysql  -u  root  -p 
+ 　　3.再打开一个cmd窗口，输入mysql -u root -p 
 
 　　　这时就可以免密码进入mysql。
 
  　　4.现在就可以进行密码更改了
 
-　　　use mysql
+　　　mysql>use mysql
 
-　　　update user set password = password("新密码") where user = "root";
+　　  mysql>update mysql.user set authentication_string=password('123qwe') where user='root' and Host ='localhost';
 
 　　 5.密码设置成功后，重启电脑，打开mysql服务（net start mysql）
  
@@ -20,3 +20,4 @@
 
 
 https://www.cnblogs.com/lyq159/archive/2019/12/16/12051059.html
+https://jingyan.baidu.com/article/fdffd1f8635c83f3e98ca1de.html

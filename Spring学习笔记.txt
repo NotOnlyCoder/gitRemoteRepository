@@ -1,0 +1,39 @@
+Spring
+  1.SpringIOC原理
+  https://www.cnblogs.com/superjt/p/4311577.html
+  
+  2.Spring对象依赖关系处理
+   https://www.cnblogs.com/StanLong/p/6943018.html 
+  
+  3.Spring的配置文件内容解析
+  https://blog.csdn.net/tjreal/article/details/79472807
+   import标签
+在实际开发过程中，一些大型项目会将配置信息按照不同的  模块划分成多个配置文件，spring import标签就可以达到此目的，我们会经常看到如下的配置信息：
+
+
+<import resource="file:..."/>
+
+<import resource="classpath:..."/>
+
+
+  file：表示使用文件系统的方式寻找后面的文件（文件的完整路径）
+  classpath：相当于/WIN-INF/classes/，如果使用了classpath，那就表示只会到你的class路径中去查找文件
+
+  classpath*：表示不仅会在class路径中去查找文件，还会在jar中去查找文件
+需要注意的是，Spring采取递归的方式解析import标签，很可能会出现变量无法解析的情
+
+  4.@Autowired和@Resource的区别
+  https://blog.csdn.net/Jack__iT/article/details/88571382
+  @Autowired默认按类型装配（这个注解是属业spring的），默认情况下必须要求依赖对象必须存在，如果要允许null值，可以设置它的required属性为false，如：@Autowired(required=false) ，如果我们想使用名称装配可以结合@Qualifier注解进行使用
+  @Resource 是JDK1.6支持的注解，默认按照名称进行装配
+ 
+  @Repository(value="userDao")
+
+该注解是告诉Spring，让Spring创建一个名字叫“userDao”的UserDaoImpl实例。
+
+当Service需要使用Spring创建的名字叫“userDao”的UserDaoImpl实例时，就可以使用@Resource(name = "userDao")注解告诉Spring，Spring把创建好的userDao注入给Service即可。
+
+***spring注解与springMVC注解扫描的问题
+***https://www.cnblogs.com/leo-song/p/7862959.html
+   两者扫描不同包的原因：父容器不能访问子容器的bean
+   spring是父容器  springMVC是子容器

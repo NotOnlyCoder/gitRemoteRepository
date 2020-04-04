@@ -1,0 +1,5 @@
+1.eclipse集成Maven及建立正确项目结构
+  参考文章：https://www.cnblogs.com/lzx2509254166/p/7674455.html
+  Maven官网：https://mvnrepository.com/
+2.eclipse中import Maven项目
+    https://www.cnblogs.com/sharpest/p/10404144.html

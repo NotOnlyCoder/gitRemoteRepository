@@ -1,0 +1,54 @@
+mybatis官网
+  https://mybatis.org/mybatis-3/zh/sqlmap-xml.html#Parameters
+1.配置文件的顶层结构
+configuration（配置）
+properties（属性）
+settings（设置）
+typeAliases（类型别名）
+typeHandlers（类型处理器）
+objectFactory（对象工厂）
+plugins（插件）
+environments（环境配置）
+  environment（环境变量）
+    transactionManager（事务管理器）
+    dataSource（数据源）
+databaseIdProvider（数据库厂商标识）
+mappers（映射器）
+
+mybatis官网
+  https://mybatis.org/mybatis-3/zh/sqlmap-xml.html#Parameters
+2.SqlSession类的方法说明
+  https://www.cnblogs.com/linked5233/articles/4264391.html
+  https://blog.csdn.net/W1197680160/article/details/90671905
+
+3.mapper.xml  属性描述
+  parameterType	
+  将会传入这条语句的参数的类全限定名或别名。包括基本类型。
+  
+ 4.resultType	
+  期望从这条语句中返回结果的类全限定名或别名。注意，如果返回的是集合，那应该设置为集合包含的类型，而不是集合本身的类型。 resultType 和 resultMap 之间只能同时使用一个。
+  
+  resultMap 
+  对外部 resultMap 的命名引用。结果映射是 MyBatis 最强大的特性，如果你对其理解透彻，许多复杂的映射问题都能迎刃而解。 resultType 和 resultMap 之间只能同时使用一个。
+
+ 5. SqlSession的规范使用方式
+   低版本
+   SqlSession session = sqlSessionFactory.openSession();
+   try {
+    // following 3 lines pseudocod for "doing some work"
+    session.insert(...);
+    session.update(...);
+    session.delete(...);
+    session.commit();
+   } finally {
+    session.close();
+   }
+   高版本
+   try (SqlSession session = sqlSessionFactory.openSession()) {
+    // following 3 lines pseudocode for "doing some work"
+    session.insert(...);
+    session.update(...);
+    session.delete(...);
+    session.commit();
+   }
+

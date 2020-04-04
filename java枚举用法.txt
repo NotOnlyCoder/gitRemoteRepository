@@ -1,0 +1,8 @@
+enum:变量的取值范围只在一个有限的集合内（相当于一个类）
+定义： public enum Size{SMALL, MEDIUM, LARGE, EXTRA_LARGE}；
+       Size s = Size.MEDIUM;
+每个枚举成员实际上是一个枚举实例，他们默认都是public static final修饰的。
+
+*比较两个枚举类型的值时用“==”，不能用“equals”
+参考文章：https://www.cnblogs.com/duanrantao/p/10457879.html
+       
