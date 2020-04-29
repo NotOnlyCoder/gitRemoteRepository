@@ -1,0 +1,10 @@
+﻿Spring可以通过两种方式获取XML文件中的Beans
+     1.通过Bean Factory容器（spring有大量实现BeanFactory接口的类，最常使用的实现类是XMLBeanFactory类）
+     2.通过BeanFactory的子容器ApplicationContext容器（ApplicationContext接口是BeanFactory的子接口，实现了更多企业需要的功能，
+最常使用的实现类是ClassPathXmlApplicationContext类）
+（https://www.cnblogs.com/swek/articles/4344397.html）spring beans通过ApplicationContext容器获取的源码解析
+
+spring Beans的创建过程
+https://blog.csdn.net/laravelshao/article/details/82318063
+
+https://blog.csdn.net/xyh820/article/details/7303330/

@@ -1,0 +1,4 @@
+1.bit byte character概念
+  https://www.cnblogs.com/LWX-YEER/p/11203185.html
+2.Java支持的位运算
+https://www.cnblogs.com/findbetterme/p/10787118.html

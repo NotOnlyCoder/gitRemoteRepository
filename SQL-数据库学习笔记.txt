@@ -1,0 +1,46 @@
+MYSQL官方网站：https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html
+MySQL指南（涵盖面广）https://www.jianshu.com/p/91e3af27743f
+一、1）使用PowerDesigner建立E-R模型
+    参考文章：E-R模型讲解见《数据库原理及设计》第二章    *（important）http://www.360doc.com/content/11/0624/15/2617151_129276457.shtml
+    任何一个数据模型都应包括数据结构、数据操作和数据约束。
+    E-R只需注重数组结构和数据约束即可。
+    CDM转PDM(Tools-->Generate Physical Model
+
+Relationship:两个实体间使用Relationship,在一对一、一对多的一般性约束下转PDM后不会生成中间表，可以使用dominant(一对一，成为主从表)和dependent(一对多，弱实体)消去不必要的Association。在多对多时，转PDM后会自动生成一张中间表。
+    Relationship可以转为entity即一张中间表。
+
+Association(E-R的联系):本质就是一个Relationship,只是有些联系不适合用Relationship转换的entity表示，才使用更详细的Association.
+    
+  2）E-RM完整性约束与RM完整性约束的联系
+     E-RM完整性约束             RM完整性约束
+       参与性约束             从表的外键设为非空
+         键约束                 用Unique约束实现
+       一般性约束
+
+  3）主从表在更新和删除如何保持一致
+    1>主表主键的操作对从表的影响
+      主表的插入对从表没影响，更新和删除SQL-92标准提供了四种策略
+        1.级联修改CASCADE:改变从表中相应的外键使之与主编保持一致
+        ......详情见数据库原理及设计P97.
+
+    2>从表外键的操作对完整性的影响
+        ......见数据库原理及设计P98.
+    可以利用外键约束和触发器实现完整性约束。
+    触发器：是一种与表操作有关问的数据库对象，当触发器所在表上出现指定事件时，将调用该对象，即表的答操作事件触发表上的触发器的执行。
+用法示例：https://www.cnblogs.com/DannyShi/p/4617469.html
+
+ *** 4）Mysql支持的约束
+     default, unique, primary key, foreign key, auto-increase
+     不支持检查约束，可以用触发器和MYSQL枚举对象替代或者在代码里检查后在插入。
+     
+二、关系代数与SQL语句
+    （关系代数可递归调用，结果的查询是基于操作符的顺序，关系数据库正是使用代数表达式来表示查询执行的计划。）
+     1)选择（从表中选出符合条件的行）
+	 instance:
+	  SELECT * FROM student WHERE stuClass = '计0001' AND stuName = '张三'
+	  详细内容见博客：
+
+三、PDM导入Mysql
+https://jingyan.baidu.com/album/3ea51489aea1f652e61bbacf.html?picindex=1
+https://blog.csdn.net/fxj0720/article/details/80327391
+两者结合才行

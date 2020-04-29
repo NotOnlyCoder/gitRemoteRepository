@@ -1,0 +1,81 @@
+Aspect Oriented Progamming
+（AOP代理可以是JDK动态代理或者CGLIB代理
+Jdk代理：基于接口的代理，一定是基于接口，会生成目标对象的接口的子对象。
+ * Cglib代理：基于类的代理，不需要基于接口，会生成目标对象的子对象
+ 如果属性proxyTargetClass默认为false, 表示使用jdk动态代理织入增强;
+ *
+ *  如果属性proxyTargetClass设置为true，表示使用Cglib动态代理技术织入增强;
+）
+参考文章
+         https://blog.csdn.net/weixin_43611145/article/details/89084019
+https://blog.csdn.net/yhl_jxy/article/details/78815636        
+		https://www.cnblogs.com/hellxz/p/9629012.html
+		解决坑：https://www.jianshu.com/p/def4c497571c
+1、前置通知（before advice），在目标方法执行之前执行。
+2、返回后通知（after returning advice），在方法正常执行结束之后的通知，可以访问到方法的返回值。
+3、抛出异常后通知（after throwing advice），在目标方法出现异常时执行的代码，可以访问到异常对象，且可以指定出现特定异常执行此方法。
+4、后置通知：（after[finally] advice），在目标方法执行之后执行（无论是否发生异常）。
+5、环绕通知：（around advice），可以实现上述所有功能。
+运用场景：
+（Authentication 权限
+
+ Caching 缓存
+
+ Context passing 内容传递
+
+ Error handling 错误处理
+
+ Lazy loading 懒加载
+ 
+ Debugging 调试
+
+ logging, tracing, profiling and monitoring 记录跟踪　优化　校准
+
+ Performance optimization 性能优化
+
+ Persistence 持久化
+
+ Resource pooling 资源池
+
+ Synchronization 同步
+
+ Transactions 事务）
+
+1.BeanFactory中配置
+<aop:config>
+        <!--定义一个切面aspect-->
+        <aop:aspect id="studentAcpect" ref="studentAcpect">
+            <!--定义一个切点-->
+            <aop:pointcut id="b" expression="execution(* com.java.test6.*.*(..))"></aop:pointcut>
+            <!--定义前置通知-->
+            <aop:before method="before" pointcut-ref="b"></aop:before>
+            <!--后置通知-->
+            <aop:after method="doAfter" pointcut-ref="b"></aop:after>
+            <!--环绕通知-->
+            <aop:around method="doAround" pointcut-ref="b"/>
+            <!--返回通知-->
+            <aop:after-returning method="doAfterReturning" pointcut-ref="b"/>
+            <!--异常通知-->
+            <aop:after-throwing method="doAfterThrowing" pointcut-ref="b" throwing="ex"/>
+
+        </aop:aspect>
+   </aop:config>
+
+*expression="execution(*service..*.*(..))"的解读（https://blog.csdn.net/a657281084/article/details/78485500）
+	（* com.evan.crm.service.*.*（..））中几个通配符的含义： 
+|第一个 * —— 通配 随便率性返回值类型| 
+|第二个 * —— 通配包com.evan.crm.service下的随便率性class| 
+|第三个 * —— 通配包com.evan.crm.service下的随便率性class的随便率性办法| 
+|第四个 .. —— 通配 办法可以有0个或多个参数| 
+
+2.基于注解
+application.xml中开启
+<aop:aspectj-autoproxy/>
+用@Aspect定义一个切面类
+  @Pointcut定义一个切点
+  @befored定义前置通知
+  其他四个通知用相应的@注解
+  
+*********注意<aop:aspectj-autoproxy/>在application,xml中开启和SpringMVC.xml中开启对应的切面层次
+在application,xml中开启不能切Controller层，只能切service层和后面的数据层
+在SpringMVC.xml中开启只能切Controller层

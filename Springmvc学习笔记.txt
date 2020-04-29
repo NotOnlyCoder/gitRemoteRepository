@@ -22,5 +22,6 @@
   6.controller方法返回参数
    https://www.cnblogs.com/Doaoao/p/10647971.html
 
-
-
+   @ResponseBody作用
+   参考文章：      https://blog.csdn.net/originations/article/details/89492884
+    在使用此注解之后不会再走视图处理器，而是直接将数据写入到输入流中，他的效果等同于通过response对象输出指定格式的数据。

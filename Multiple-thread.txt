@@ -1,0 +1,31 @@
+一、Java多线程的4种实现方式
+参考文章：https://www.cnblogs.com/duanjiapingjy/p/9434244.html
+1）实现Runnable接口。将任务代码移到实现了Runnable接口的类的run方法中，再把创建好的对象传给Thread对象。
+  public interface Runnable{
+  
+      void run(){}
+  
+  }
+  
+  实现类
+public class MyRunnable implements Runnable{
+	private volatile  int i = 0;
+	@Override
+	public void run() {
+		 System.out.println(Thread.currentThread().getName()+"--"+ i++);
+	}
+}
+
+ public static void main(String args[]) {
+	   Runnable r = new MyRunnable();
+	     for(int i=0;i<10;i++) {
+	    	 new Thread(r).start();
+	   }
+	 System.out.println(Thread.currentThread().getName());
+  }
+ 
+2）.继承Thread类，重写run方法（其实Thread类本身也实现了Runnable接口）
+3）.实现Callable接口，重写call方法（有返回值）
+4）.使用线程池（有返回值）
+
+二、并发（竞争条件）下的同步存取

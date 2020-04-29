@@ -1,0 +1,5 @@
+1.What's DO/BO/DTO/VO/AO/PO.
+reference:https://www.zhihu.com/question/39651928
+   不同类型的对象在架构设计中用于不同的用途,为什么要在分层架构中定义这些 POJO 对象呢？主要是为了确保各个分层能够很好地封装自己的服务，有效地控制信息的传播。
+
+2.代码风格

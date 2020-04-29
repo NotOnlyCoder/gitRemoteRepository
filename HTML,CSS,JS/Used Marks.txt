@@ -1,0 +1,6 @@
+head
+  title
+  meta    属性：charset，name {description,robots,keywords},content,http-equiv
+img     属性：width、height
+body    属性：bgcolor背景颜色,backgroud背景图片,text文字颜色,link链接的颜色，alink链接点击后的颜色
+a       属性：href

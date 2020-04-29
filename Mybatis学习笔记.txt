@@ -52,3 +52,4 @@ mybatis官网
     session.commit();
    }
 
+6)resultMap元素使用说明

@@ -1,0 +1,20 @@
+Servlet复习笔记
+   1.servlet和dispatcher的区别/SpringMVC、Tomcat怎样完成一次Http请求的
+ 参考文章：https://blog.csdn.net/achenyuan/article/details/77246395
+    SpringMVC的DispatchServlet实现了HttpServlet，那么SpringMVC在Tomcat看来，其实就是一个Servlet。
+   2.http服务器、web服务器、应用服务器的区别
+     https://www.cnblogs.com/zhaoyl/archive/2012/10/10/2718575.html 
+
+   1.request
+   2.session         见Tomcat 与Java Web 第4 5章
+   3.http响应正文
+
+JSP学习    reference: https://www.runoob.com/jsp
+   
+  http协议和tcp/ip协议的区别
+
+
+正文：
+   1.请求范围(request)，回话范围(HttpSession)，应用范围(ServletContext)。
+      每个范围都有自己的共享数据，可以通过相应的（隐含）对象获取。
+

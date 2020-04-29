@@ -1,0 +1,7 @@
+    URI，全称是 Uniform Resource Identifiers，即统一资源标识符，用于在互联网上标识一个资源。完整的 URI，由四个主要的部分构成：
+
+<scheme>://<authority><path>?<query>
+referrence:https://www.cnblogs.com/upyun/p/8267334.html
+
+URI和URL的区别
+referrence:https://www.cnblogs.com/upyun/p/8267334.html

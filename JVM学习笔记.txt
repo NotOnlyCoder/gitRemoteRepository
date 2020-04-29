@@ -1,1 +1,4 @@
 https://blog.csdn.net/architect0719/article/details/50486933/
+
+JVM检测工具jconsole的使用
+https://blog.csdn.net/defonds/article/details/45064297

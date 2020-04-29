@@ -1,0 +1,2 @@
+1215 - Cannot add foreign key constraint
+https://segmentfault.com/a/1190000020191540?utm_source=tag-newest

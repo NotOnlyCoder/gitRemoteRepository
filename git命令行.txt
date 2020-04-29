@@ -1,4 +1,6 @@
-﻿git init  建立git
+﻿Git和SVN的区别：https://www.cnblogs.com/mtl-key/p/6902627.html
+
+git init  建立git
 git status  查看状态（建立了git的文件夹中是否有文件的改变或增删）
 git add -A  把新加和有改变的文件添加到stage
 git commit -m "提交信息"  把stage中的文件提交到local repository
