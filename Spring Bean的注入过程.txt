@@ -8,3 +8,10 @@ spring Beans的创建过程
 https://blog.csdn.net/laravelshao/article/details/82318063
 
 https://blog.csdn.net/xyh820/article/details/7303330/
+
+
+SpringMVC/SpringMVC常用注解。
+https://www.jianshu.com/p/71e8971d2bc5?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation
+
+@restcontroller 和 @controller的区别
+https://www.cnblogs.com/shuaifing/p/8119664.html

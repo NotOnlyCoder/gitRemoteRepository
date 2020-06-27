@@ -21,3 +21,11 @@
 
 https://www.cnblogs.com/lyq159/archive/2019/12/16/12051059.html
 https://jingyan.baidu.com/article/fdffd1f8635c83f3e98ca1de.html
+
+
+ 笔记
+  1、mysql版本8支持窗口函数
+https://mp.weixin.qq.com/s?__biz=MzAxMTMwNTMxMQ==&mid=2649247566&idx=1&sn=f9c7018c299498673b38221db2ecd5cd&chksm=835fc77eb4284e68b7528fd7f75eedb8868a6740704af8559f8a5cbdd2867a49ffa21bf4e531&token=426730634&lang=zh_CN#rd
+    
+窗口函数排名的区别：rank, dense_rank, row_number
+ *** https://leetcode-cn.com/problems/rank-scores/solution/tu-jie-sqlmian-shi-ti-jing-dian-pai-ming-wen-ti-by/

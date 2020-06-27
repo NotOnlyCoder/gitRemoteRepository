@@ -44,3 +44,10 @@ Association(E-R的联系):本质就是一个Relationship,只是有些联系不适合用Relationship
 https://jingyan.baidu.com/album/3ea51489aea1f652e61bbacf.html?picindex=1
 https://blog.csdn.net/fxj0720/article/details/80327391
 两者结合才行
+
+
+MYSQL常用函数
+Concat(str,str,...str) 拼接不同的列输出为自己想要的格式
+SELECT Concat(Id,'(',Score,')') AS stuScore
+ FROM `scores`
+ORDER BY Score

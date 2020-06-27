@@ -49,7 +49,9 @@ mybatis官网
     session.insert(...);
     session.update(...);
     session.delete(...);
-    session.commit();
+    session.commit();                                       
    }
 
 6)resultMap元素使用说明
+  单表查询用POJO就可以了，在多表查询时需要定义合适的resultmap。（数据库字段名和对象属性不一样是也可以用resultmap）
+  reference：https://blog.csdn.net/zhanglinlang/article/details/54955596
